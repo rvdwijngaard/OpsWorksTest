@@ -1,0 +1,13 @@
+{
+  "name": "HelloOpsWorks",
+  "version": "0.0.0",
+  "description": "HelloOpsWorks",
+  "main": "app.js",
+  "author": {
+    "name": "rvdwijngaard",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
