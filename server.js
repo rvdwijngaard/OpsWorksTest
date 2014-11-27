@@ -22,9 +22,9 @@ app.get('/', function (req, res) {
     res.send('<b> hello there world</b>');
 });
 
-//app.get('/profile', isLoggedIn, function (req, res) { 
-//    res.send('<p>hello <b>'+ req.user.get("name") + '</b></p>');
-//});
+app.get('/profile', isLoggedIn, function (req, res) { 
+    res.send('<p>hello <b>'+ req.user.get("name") + '</b></p>');
+});
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
