@@ -1,7 +1,0 @@
-aws-credentials.json
-*.sw*
-*~
-build/
-bin/
-node_modules/
-vendor/
