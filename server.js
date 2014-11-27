@@ -16,23 +16,23 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-require('./config/passport')(passport); // pass passport for configuration
+//require('./config/passport')(passport); // pass passport for configuration
 
 app.get('/', function (req, res) {
     res.send('<b> hello there world</b>');
 });
 
-app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+//app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
-app.get('/auth/google/callback',
-	    passport.authenticate('google', {
-        successRedirect : '/profile',
-        failureRedirect : '/'
-    }));
+//app.get('/auth/google/callback',
+//	    passport.authenticate('google', {
+//        successRedirect : '/profile',
+//        failureRedirect : '/'
+//    }));
 
-app.get('/profile', isLoggedIn, function (req, res) { 
-    res.send('<p>hello <b>'+ req.user.get("name") + '</b></p>');
-});
+//app.get('/profile', isLoggedIn, function (req, res) { 
+//    res.send('<p>hello <b>'+ req.user.get("name") + '</b></p>');
+//});
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
@@ -44,6 +44,16 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/auth/google');
 }
+
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.send('foute boel');
+    // res.render('error', {
+    //     message: err.message,
+    //     error: {}
+    // });
+});
+
 
 app.listen(80, function () {
     console.log("the app is running");
