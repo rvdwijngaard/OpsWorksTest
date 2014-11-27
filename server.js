@@ -16,7 +16,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-//require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // pass passport for configuration
 
 app.get('/', function (req, res) {
     res.send('<b> hello there world</b>');
