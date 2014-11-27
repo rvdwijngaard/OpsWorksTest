@@ -2,6 +2,6 @@
     'googleAuth' : {
         'clientID'      : 'myid',
         'clientSecret'  : 'mysecret',
-        'callbackURL'   : 'http://127.0.0.1/auth/google/callback'
+        'callbackURL'   : 'http://http://54.229.176.211/auth/google/callback'
     }
 };
