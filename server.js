@@ -22,14 +22,6 @@ app.get('/', function (req, res) {
     res.send('<b> hello there world</b>');
 });
 
-app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
-
-app.get('/auth/google/callback',
-	    passport.authenticate('google', {
-        successRedirect : '/profile',
-        failureRedirect : '/'
-    }));
-
 //app.get('/profile', isLoggedIn, function (req, res) { 
 //    res.send('<p>hello <b>'+ req.user.get("name") + '</b></p>');
 //});
